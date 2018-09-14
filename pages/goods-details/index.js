@@ -54,7 +54,7 @@ Page({
       } 
     })
     wx.request({
-      url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/shop/goods/detail',
+      url: app.globalData.subDomain +'/shop/goods/detail',
       data: {
         id: e.id
       },
@@ -190,7 +190,7 @@ Page({
     // 计算当前价格
     if (canSubmit) {
       wx.request({
-        url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/shop/goods/price',
+        url: app.globalData.subDomain +'/shop/goods/price',
         data: {
           goodsId: that.data.goodsDetail.basicInfo.id,
           propertyChildIds:propertyChildIds
@@ -436,7 +436,7 @@ Page({
   reputation: function (goodsId) {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/shop/goods/reputation',
+      url: app.globalData.subDomain + '/shop/goods/reputation',
       data: {
         goodsId: goodsId
       },
@@ -469,7 +469,7 @@ Page({
   getVideoSrc: function (videoId) {
     var that = this;
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/media/video/detail',
+      url: app.globalData.subDomain + '/media/video/detail',
       data: {
         videoId: videoId
       },
@@ -509,7 +509,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/shop/goods/kanjia/join',
+      url: app.globalData.subDomain + '/shop/goods/kanjia/join',
       data: {
         kjid: that.data.curGoodsKanjia.id,
         token: wx.getStorageSync('token')
